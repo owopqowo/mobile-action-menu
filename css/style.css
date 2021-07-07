@@ -1,0 +1,191 @@
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-sizing: border-box;
+  background: url(../img/tropical.jpg) no-repeat;
+  background-size: cover;
+}
+.wrap {
+  overflow: hidden;
+  position: relative;
+  width: 640px;
+  max-width: 100%;
+  height: 100%;
+  padding: 15px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(0deg, rgba(117,12,44,0.5) 0%, rgba(236,118,19,0.6) 100%);
+  color: #fff;
+}
+.menu {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+.btn-menu {
+  position: relative;
+  z-index: 10;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #4a00ff;
+  transition-duration: 0.15s;
+  transition-timing-function: cubic-bezier;
+}
+.btn-menu::before,
+.btn-menu::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 2px;
+  margin: -1px 0 0 -15px;
+  background: #fff;
+  
+}
+.btn-menu::before {
+  transform: rotate(90deg)
+}
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+}
+.circle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #4a00ff;
+  transition-duration: 0.15s;
+  transition-timing-function: cubic-bezier;
+}
+.btn {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+.edit.btn {
+  top: -44px;
+  right: 12px;
+}
+.message.btn {
+  left: -21px;
+  top: -23px;
+}
+.clock.btn {
+  left: -37px;
+  top: 28px;
+}
+.icon {
+  position: relative;
+  display: inline-block;
+}
+.edit.icon {
+  color: #000;
+  margin-left: 4px;
+  margin-top: 7px;
+  width: 14px;
+  height: 2px;
+  border-radius: 1px;
+  border: solid 1px #fff;
+  transform: rotate(-45deg);
+}
+.edit.icon:before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: -1px;
+  width: 0px;
+  height: 0px;
+  border-left: solid 5px transparent;
+  border-right: solid 5px #fff;
+  border-top: solid 2px transparent;
+  border-bottom: solid 2px transparent;
+}
+.clock.icon {
+  color: #000;
+  margin-left: 2px;
+  margin-top: 2px;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  border: solid 1px #fff;
+  border-radius: 8px;
+}
+.clock.icon:before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 5px;
+  height: 1px;
+  background-color: #fff;
+  transform-origin: 0% 0%;
+}
+.clock.icon:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 7px;
+  width: 1px;
+  height: 6px;
+  background-color: #fff;
+  transform-origin: 0% 0%;
+}
+.message.icon {
+  width: 14px;
+  height: 10px;
+  border-radius: 2px 2px 4px 4px;
+  border: 1px solid #fff;
+  border-bottom-color: transparent;
+  margin: 5px 2px 7px;
+}
+.message.icon:before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 3px;
+  width: 3px;
+  height: 3px;
+  border-color: #fff;
+  border-width: 0 0 1px 1px;
+  border-style: solid;
+  transform: rotate(-45deg);
+}
+.message.icon:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  height: 1px;
+  border-color: #fff;
+  border-width: 0 7px 0 3px;
+  border-style: solid;
+}
+
+
+/* menu active */
+.menu.active .btn-menu {
+  transform: rotate(45deg);
+  background: #3b00cc;
+}
+.menu.active .circle::before {
+  transform: scale(3);
+}
+.menu.active .btn {
+  visibility: visible;
+  opacity: 1;
+  transition-duration: 0.2s;
+}
